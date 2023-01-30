@@ -57,7 +57,7 @@ const Quizz = () => {
             <div className="answer-section">
                 {questions[currentQuestion].answerOptions.map((ans,i)=>{
                     return (
-                    <button className={"button ${clicked && ans.isCorrect? 'correct':'button'}"}
+                    <button 
                     disabled={clicked}
                     key={i} 
                     onClick={()=>hanldleAnswrOption(ans.isCorrect)}
