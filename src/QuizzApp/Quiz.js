@@ -2,6 +2,7 @@ import React,{useState} from 'react';
 import './Quiz.css';
 import questions from "./QuizData";
 import QuizResult from './QuizResult';
+import Timer from './Timer'
 import {ToastContainer, toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'
 
@@ -22,6 +23,17 @@ const Quizz = () => {
             toast.error('Wrong Answer!',{theme:"colored"});
         }
         setClicked(true);
+    };
+    const handlePrevOption=() =>{
+        setClicked(false)
+        const prevQuestion = currentQuestion-1;
+        // if(prevQuestion<questions.length-1){
+        //     setCurrentQuestion(prevQuestion);
+        //     }
+        //     else{
+        //         setShowResult(true)
+        //     }
+        if(currentQuestion>0){setCurrentQuestion((currentQuestion-1));}
     };
     const handleNextOption=()=>{
         setClicked(false) 
@@ -69,8 +81,12 @@ const Quizz = () => {
                 })
                 }
             <div className='actions'>
+                <button onClick={handlePrevOption}>Prev</button>
                 <button onClick={handlePlayAgain}>Quit</button>
                 <button disabled={!clicked} onClick={handleNextOption}>Next</button>
+            </div>
+            <div className='timer'>
+                Time Left : <Timer setShowResult={setShowResult}/> seconds
             </div>
             </div>
             </>)}

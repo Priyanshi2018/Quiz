@@ -78,3 +78,9 @@ button svg{
     background-color: #234668;
     color:white;
 }
+.timer{
+    position:absolute;
+    color:#ffffff;
+    top: 80px;
+    right:140px;
+}
