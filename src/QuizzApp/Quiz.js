@@ -26,13 +26,6 @@ const Quizz = () => {
     };
     const handlePrevOption=() =>{
         setClicked(false)
-        const prevQuestion = currentQuestion-1;
-        // if(prevQuestion<questions.length-1){
-        //     setCurrentQuestion(prevQuestion);
-        //     }
-        //     else{
-        //         setShowResult(true)
-        //     }
         if(currentQuestion>0){setCurrentQuestion((currentQuestion-1));}
     };
     const handleNextOption=()=>{
@@ -70,6 +63,7 @@ const Quizz = () => {
                 {questions[currentQuestion].answerOptions.map((ans,i)=>{
                     return (
                     <button 
+                    className= {`button ${clicked && ans.isCorrect ? "correct":"button"}`}
                     disabled={clicked}
                     key={i} 
                     onClick={()=>hanldleAnswrOption(ans.isCorrect)}

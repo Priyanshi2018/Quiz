@@ -8,7 +8,7 @@ body{
 }
 .app{
     background-color: #252d4a;
-    width:500px;
+    width:100%;
     min-height: 250px;
     height: min-content;
     border-radius: 15px;
@@ -16,6 +16,7 @@ body{
     box-shadow: 10px 10px 42px 0px rgba(0,0,0,0.75);
     display:flex;
     justify-content: space-evenly;
+    margin:auto;
 }
 .score-section{
     text-align: center;
@@ -83,4 +84,10 @@ button svg{
     color:#ffffff;
     top: 80px;
     right:140px;
+}
+@media screen and (max-width:500px) {
+    .app{
+        width:80%;
+        height:40%;
+    }
 }
