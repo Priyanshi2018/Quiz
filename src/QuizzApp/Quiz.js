@@ -2,7 +2,7 @@ import React,{useState} from 'react';
 import './Quiz.css';
 import questions from "./QuizData";
 import QuizResult from './QuizResult';
-import Timer from './Timer'
+//import Timer from './Timer'
 import {ToastContainer, toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'
 
@@ -79,9 +79,9 @@ const Quizz = () => {
                 <button onClick={handlePlayAgain}>Quit</button>
                 <button disabled={!clicked} onClick={handleNextOption}>Next</button>
             </div>
-            <div className='timer'>
+            {/* <div className='timer'>
                 Time Left : <Timer setShowResult={setShowResult}/> seconds
-            </div>
+            </div> */}
             </div>
             </>)}
             <ToastContainer/>
